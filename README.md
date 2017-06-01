@@ -8,12 +8,22 @@ Overview
 
 When we drive, we use our eyes to decide where to go.  The lines on the road that show us where the lanes are act as our constant reference for where to steer the vehicle.  Naturally, one of the first things we would like to do in developing a self-driving car is to automatically detect lane lines using an algorithm.
 
-In this project you will detect lane lines in images using Python and OpenCV.  OpenCV means "Open-Source Computer Vision", which is a package that has many useful tools for analyzing images.  
+In this project you will detect lane lines in images using Python and OpenCV.  OpenCV means "Open-Source Computer Vision", which is a package that has many useful tools for analyzing images.
 
-To complete the project, two files will be submitted: a file containing project code and a file containing a brief write up explaining your solution. We have included template files to be used both for the [code](https://github.com/udacity/CarND-LaneLines-P1/blob/master/P1.ipynb) and the [writeup](https://github.com/udacity/CarND-LaneLines-P1/blob/master/writeup_template.md).The code file is called P1.ipynb and the writeup template is writeup_template.md 
+[Project rubric for scoring](https://review.udacity.com/#!/rubrics/322/view)
 
-To meet specifications in the project, take a look at the requirements in the [project rubric](https://review.udacity.com/#!/rubrics/322/view)
+Submission Contents
+---
 
+This project is submitted with the following files:
+* [README.md](README.md) - this readme
+* [writeup.md](writeup.md) - an explanation of the solution
+* [P1.ipynb](P1.ipynb) - project code in a Jupyter notebook
+* [examples](examples) - directory with original examples from course
+* [test_images](test_images) - directory with images on which to test lane finding
+* [test_images_output](test_images_output) - directory with images from test_images on which lane finding was executed
+* [test_videos](test_videos) - directory with videos on which to test lane finding
+* [test_videos_output](test_videos_output) - directory with videos from test_videos on which lane finding was executed
 
 Creating a Great Writeup
 ---
@@ -28,8 +38,6 @@ For this project, a great writeup should provide a detailed response to the "Ref
 We encourage using images in your writeup to demonstrate how your pipeline works.  
 
 All that said, please be concise!  We're not looking for you to write a book here: just a brief description.
-
-You're not required to use markdown for your writeup.  If you use another method please just submit a pdf of your writeup. Here is a link to a [writeup template file](https://github.com/udacity/CarND-LaneLines-P1/blob/master/writeup_template.md). 
 
 
 The Project
