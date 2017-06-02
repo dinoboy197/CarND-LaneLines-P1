@@ -36,6 +36,29 @@ I constructed a single frame lane line image overlay function, `create_overlay_w
 1. Overlay the black canvass (now including lane lines) onto a copy of the original image.
 1. Return the new image with lane lines drawn.
 
+Some example images after each stage in the pipeline:
+
+### Original Image
+![Original](test_images/solidWhiteRight.jpg)
+
+### Grayscale (shows as monochrome here)
+![Original](writeup_examples/grayscale_solidWhiteRight.jpg)
+
+### Blurred Grayscale (shows as monochrome here)
+![Original](writeup_examples/blurred_grayscale_solidWhiteRight.jpg)
+
+### Canny edge detected
+![Original](writeup_examples/canny_solidWhiteRight.jpg)
+
+### Masked
+![Original](writeup_examples/masked_solidWhiteRight.jpg)
+
+### Hough Lines
+![Original](writeup_examples/hough_solidWhiteRight.jpg)
+
+### Final image
+![Original](test_images_output/solidWhiteRight.jpg)
+
 Arriving at the series of steps in this pipeline was trivial given the examples provided in Lesson 1. However, the parameters for the Canny-edge detection, Hough transformation, and line averaging functions required experimentation to arrive a satisfactory final output. I started by modifying the Canny-edge detection and Hough transformtion parameters from those that I found sufficient in the Lesson 1 tutorials. In particular, I needed to increase the Canny low threshold for pixels, as well as increase the minimum line length and maximum line gap in the Hough line finding transformation, in order to improve recall of the line segments and improve the precision of the lines (eliminate outliers and lines not corresponding to lane lines).
 
 Once I felt that I had tuned the line detection to my satisfaction, I moved onto the `draw_lines` function. I tried a handful of approaches for creating single, bold lines for the vehicle lane lines. In each experiment, I first grouped the lines by the sign of their slopes, then in each group, removed lines with zero or infinite slope. Then, each experiment has a different approach to combining the individual lines in each group into a single line.
