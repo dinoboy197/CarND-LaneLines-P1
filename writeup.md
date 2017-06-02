@@ -25,15 +25,15 @@ I constructed a single frame lane line image overlay function, `create_overlay_w
 1. Create a trapezoidal image mask, encompassing the two lane lines in which the vehicle is travelling and extending approximately to the horizon of the lane.
 1. Create a copy of the Canny-edge-detected image, including only the pixels in the mask from the previous step.
 1. Apply a Hough transformation on the masked Canny-edge-detected image, using rho=2, theta=1 degree, Hough threshold=15, minimum line length=60 pixels and maximum line gap=30 pixels.
-1. Use the Hough transformation lines to draw lane lines onto a blank black canvass (`draw_lines()`)
-  1. Group the lines by the sign of their slope.
-  1. In each group:
-    1. Remove lines with zero or infinite slope.
-    1. Compute the slope and y-intercept for each line.
-    1. Remove lines whose slope is more than two standard deviations away from the median.
-    1. Average slopes and intercepts of remaining lines.
-    1. Draw the line with average slope and intercept onto the blank black canvass, using the bounding box of the mask.
-1. Overlay the black canvass (now including lane lines) onto a copy of the original image.
+1. Use the Hough transformation lines to draw lane lines onto a blank black canvas (`draw_lines()`)
+   1. Group the lines by the sign of their slope.
+   1. In each group:
+      1. Remove lines with zero or infinite slope.
+      1. Compute the slope and y-intercept for each line.
+      1. Remove lines whose slope is more than two standard deviations away from the median.
+      1. Average slopes and intercepts of remaining lines.
+      1. Draw the line with average slope and intercept onto the blank black canvas, using the bounding box of the mask.
+1. Overlay the black canvas (now including lane lines) onto a copy of the original image.
 1. Return the new image with lane lines drawn.
 
 Some example images after each stage in the pipeline:
@@ -73,7 +73,7 @@ Of the four experiments attempted, the second (computing slopes and intercepts f
 
 ### 2. Identify potential shortcomings with your current pipeline
 
-While the current pipeline draws averaged lines well, the lines are "shaky" in videos - they're not as smooth as the video example provided. Additionally, the lines drawn by the pipeline don't track the lines quite as closely as the examples provided. Furthermore, the pipeline does NOT work on the challenge video - the lines drawn do not track the lane lines.
+While the current pipeline draws averaged lines well, the lines are "shaky" in videos - they're not as smooth as [the video example](examples/P1_example.mp4) provided. Additionally, the lines drawn by the pipeline don't track the lines quite as closely as the examples provided. Furthermore, the pipeline does NOT work on [the challenge video](test_videos/challenge.mp4) - [the lines drawn by my pipeline](test_videos_output/challenge.mp4) do not track the lane lines.
 
 Other shortcomings which would be revealed with other examples:
 * Different image / video dimensions and DPI would affect results due to hardcoded margins for the region of interest mask.
