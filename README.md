@@ -18,6 +18,7 @@ Submission Contents
 This project is submitted with the following files:
 * [README.md](README.md) - this readme
 * [writeup.md](writeup.md) - an explanation of the solution
+* [writeup_examples](writeup_examples) - example intermediate pipeline detection images for the writeup
 * [P1.ipynb](P1.ipynb) - project code in a Jupyter notebook
 * [examples](examples) - directory with original examples from course
 * [test_images](test_images) - directory with images on which to test lane finding
